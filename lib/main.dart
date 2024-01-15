@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'introduction_pages/welcome_view.dart';
 
 void main() {
   runApp(Application());
@@ -11,26 +12,8 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Gozasht Application',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  'personal assistant and\n companion for car maintenance',
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      theme: ThemeData(fontFamily: 'vazir'),
+      home: WelcomeView(),
     );
   }
 }
