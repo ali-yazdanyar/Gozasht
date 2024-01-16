@@ -1,4 +1,5 @@
+lib
 build
-android
 .dart_tool
 .idea
+android
