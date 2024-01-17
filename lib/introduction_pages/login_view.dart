@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gozasht/introduction_pages/sign_up.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -17,16 +18,26 @@ class _LoginViewState extends State<LoginView> {
     _isObscured = true;
   }
 
+  void navigateToSignUp(BuildContext context, Widget page) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return page;
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xff031b36),
         appBar: AppBar(
           title: Text(
             'بازگشت',
             style: TextStyle(color: Colors.white, fontSize: 18.0),
           ),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Color(0xff031b36),
           iconTheme: IconThemeData(color: Colors.white),
         ),
         body: SafeArea(
@@ -54,7 +65,7 @@ class _LoginViewState extends State<LoginView> {
                       keyboardType: TextInputType.text,
                       style: TextStyle(
                           color: Colors.white,
-                          decorationColor: Colors.blueAccent),
+                          decorationColor: Color(0xff031b36)),
                       textDirection: TextDirection.rtl,
                       textAlign: TextAlign.right,
                       decoration: InputDecoration(
@@ -125,13 +136,17 @@ class _LoginViewState extends State<LoginView> {
                       children: [
                         OutlinedButton(
                           style: OutlinedButton.styleFrom(
-                              minimumSize: Size(120.0, 40.0),
-                              side: BorderSide(color: Colors.black, width: 1.5),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              foregroundColor: Colors.black),
-                          onPressed: () {},
+                            minimumSize: Size(120.0, 40.0),
+                            side: BorderSide(
+                                color: Colors.blueAccent, width: 1.5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            foregroundColor: Colors.blueAccent,
+                          ),
+                          onPressed: () {
+                            navigateToSignUp(context, SignUp());
+                          },
                           child: Text('ثبت نام'),
                         ),
                         ElevatedButton(
@@ -139,7 +154,7 @@ class _LoginViewState extends State<LoginView> {
                           child: Text('ورود'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
-                            foregroundColor: Colors.blueAccent,
+                            foregroundColor: Color(0xff031b36),
                             minimumSize: Size(120.0, 40.0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5.0),

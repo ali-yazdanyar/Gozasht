@@ -17,7 +17,7 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Color(0xff031b36),
       body: SafeArea(
         child: Center(
           child: Column(
