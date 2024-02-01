@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gozasht/home_page.dart';
 import 'package:gozasht/introduction_pages/sign_up.dart';
 
 class LoginView extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LoginViewState extends State<LoginView> {
     _isObscured = true;
   }
 
-  void navigateToSignUp(BuildContext context, Widget page) {
+  void navigateToPages(BuildContext context, Widget page) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (BuildContext context) {
@@ -145,12 +146,14 @@ class _LoginViewState extends State<LoginView> {
                             foregroundColor: Colors.blueAccent,
                           ),
                           onPressed: () {
-                            navigateToSignUp(context, SignUp());
+                            navigateToPages(context, SignUp());
                           },
                           child: Text('ثبت نام'),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            navigateToPages(context, HomePage());
+                          },
                           child: Text('ورود'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
@@ -164,7 +167,6 @@ class _LoginViewState extends State<LoginView> {
                       ],
                     ),
                   ),
-                  Text('hey')
                 ],
               ),
             ),
